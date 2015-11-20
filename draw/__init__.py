@@ -35,3 +35,7 @@ class Window(object):
 
     def clear(self):
         self.canvas.delete(ALL)
+
+
+def rgb(red, green, blue):
+    return '#%02x%02x%02x' % (red, green, blue)

@@ -2,6 +2,11 @@
 
 This project provides a fun way to teach kids Python. Instead of doing boring textual programs, they can create fun programs that draw things.
 
+To install the package run:
+```
+pip install draw-and-learn
+```
+
 Here's a minimal program that opens a window and draws a rectangle inside it:
 ```python
 from draw import Window
@@ -101,3 +106,9 @@ w.circle(w.width / 2, w.height / 2, 50, color='blue')
 
 Erases everything that was drawn in the window.
 
+
+## Helper Methods
+
+### rgb(red, green, blue)
+
+Creates a color string from its red, green and blue parts (each is expected to be a number from 0 to 255).

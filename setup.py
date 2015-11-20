@@ -1,10 +1,13 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
-setup(name='draw-and-learn',
-      version='0.1',
-      description='',
-      url='https://github.com/ishirav/draw-and-learn',
-      author='Itai Shirav',
-      license='MIT',
-      packages=['draw'],
-      zip_safe=False)
+setup(
+    name='draw-and-learn',
+    version='0.1',
+    description='',
+    url='https://github.com/ishirav/draw-and-learn',
+    download_url = 'https://github.com/ishirav/draw-and-learn/tarball/0.1',
+    author='Itai Shirav',
+    license='MIT',
+    packages=find_packages(),
+    zip_safe=False
+)
