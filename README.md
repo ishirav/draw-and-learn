@@ -58,7 +58,7 @@ Draws a line inside the window, from the point `(x0, y0)` to the point `(x1, y1)
 
 Optional parameters:
 
-* `color` - specified the line color using any of the color names here: http://www.tcl.tk/man/tcl8.5/TkCmd/colors.htm (defaults to black).
+* `color` - specified the line color using any of the color names here: http://wiki.tcl.tk/37701 (defaults to black).
 * `thickness` - the line thickness in pixels (defaults to 1).
 
 For example:
@@ -88,7 +88,7 @@ w.rect(100, 100, 200, 300, color='black', thickness=10, fill='grey')
 
 ### circle(x, y, radius, color='black', thickness=1, fill='')
 
-Draws a circle of the give radius, centered at `(x, y)`.
+Draws a circle of the given radius, centered at `(x, y)`.
 
 Optional parameters:
 
@@ -112,3 +112,21 @@ Erases everything that was drawn in the window.
 ### rgb(red, green, blue)
 
 Creates a color string from its red, green and blue parts (each is expected to be a number from 0 to 255).
+
+
+### points_on_a_circle(x, y, radius, num_points, start_angle=270)
+
+Returns a list of `Point` instances that are arranged in equal distances around a circle. 
+This can be used for drawing polygons, stars etc.
+
+The points lie on a circle centered at `(x, y)` with the given radius.
+
+`num_points` is the number of points to return.
+
+`start_angle` determines where the first point is located: 270 degrees is 12 o'clock,
+0 degrees is 3 o'clock, 90 degrees is 6 o'clock and 180 degrees is 9 o'clock.
+
+```python
+>>> print points_on_a_circle(100, 100, 70, 4)
+[Point(x=100.0, y=30.0), Point(x=170.0, y=100.0), Point(x=100.0, y=170.0), Point(x=30.0, y=100.0)]
+```

@@ -1,4 +1,6 @@
 from Tkinter import *
+from collections import namedtuple
+
 
 class Window(object):
 
@@ -37,5 +39,21 @@ class Window(object):
         self.canvas.delete(ALL)
 
 
+Point = namedtuple('Point', ['x', 'y'])
+
+
+def points_on_a_circle(x, y, radius, num_points, start_angle=270):
+    from math import sin, cos, pi
+    start_angle = start_angle * pi / 180
+    angle = 2 * pi / num_points
+    return [
+        Point(x + radius * cos(start_angle + i * angle), 
+              y + radius * sin(start_angle + i * angle)) 
+        for i in xrange(num_points)
+    ]
+
+
 def rgb(red, green, blue):
     return '#%02x%02x%02x' % (red, green, blue)
+
+
